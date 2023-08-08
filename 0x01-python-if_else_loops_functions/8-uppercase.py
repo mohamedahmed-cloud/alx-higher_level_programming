@@ -4,5 +4,5 @@ def uppercase(str):
         x = i
         if 97 <= ord(i) <= 123:
             x = chr(ord(i) - 32)
-        print("{:d}".format(x), end="")
+        print("{:s}".format(x), end="")
     print()
