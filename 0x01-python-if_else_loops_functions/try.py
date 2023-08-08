@@ -1,0 +1,1 @@
+print("Sammy the {} {} . {:.4g}".format("shark", "made", 4232.64535))
