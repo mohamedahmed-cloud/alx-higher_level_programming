@@ -1,5 +1,5 @@
 pycodestyle $1
-if [ $? -ne 0 ]; then
+if [ $? -ne 1 ]; then
 	echo "Code Style End"
 	git --chmod +x $1
 	git add * 
