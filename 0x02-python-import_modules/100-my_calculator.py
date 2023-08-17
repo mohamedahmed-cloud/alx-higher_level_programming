@@ -5,7 +5,7 @@ if __name__ == "__main__":
     n = len(argv)
     allowed = "+-*/"
     n -= 1
-    print(argv)
+    # print(argv)
 
     if n != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
@@ -13,7 +13,6 @@ if __name__ == "__main__":
 
     a = int(argv[1])
     operator = argv[2]
-    print(operator)
 
     b = int(argv[3])
     if operator not in allowed:
