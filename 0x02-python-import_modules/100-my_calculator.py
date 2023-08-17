@@ -20,19 +20,18 @@ if __name__ == "__main__":
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
 
-    match operator:
-        case "+":
-            from calculator_1 import add
-            print("{:} + {:} = {:}".format(a, b, add(a, b)))
+    if operator == "+":
+        from calculator_1 import add
+        print("{:} + {:} = {:}".format(a, b, add(a, b)))
 
-        case "-":
-            from calculator_1 import sub
-            print("{:} - {:} = {:}".format(a, b, sub(a, b)))
+    elif operator == "-":
+        from calculator_1 import sub
+        print("{:} - {:} = {:}".format(a, b, sub(a, b)))
 
-        case "*":
-            from calculator_1 import mul
-            print("{:} * {:} = {:}".format(a, b, mul(a, b)))
+    elif operator == "*":
+        from calculator_1 import mul
+        print("{:} * {:} = {:}".format(a, b, mul(a, b)))
 
-        case "/":
-            from calculator_1 import div
-            print("{:} / {:} = {:}".format(a, b, div(a, b)))
+    elif operator == "/":
+        from calculator_1 import div
+        print("{:} / {:} = {:}".format(a, b, div(a, b)))
