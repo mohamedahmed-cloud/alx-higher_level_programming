@@ -5,6 +5,8 @@ def roman_to_int(roman_string):
            "", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC",
            "", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM",
            "", "M", "MM", "MMM"]
+    if isinstance(roman_string, (int, float)) or roman_string is None:
+        return 0
 
     def find_order(curr):
         if "I" in curr or "V" in curr:
