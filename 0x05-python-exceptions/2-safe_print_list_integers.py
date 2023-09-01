@@ -11,7 +11,7 @@ def safe_print_list_integers(my_list=[], x=0):
     for i in value:
         cnt += 1
 
-    if value:
+    if value and x:
         value = int("".join(map(str, value[:x])))
     else:
         value = 0

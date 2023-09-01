@@ -2,7 +2,7 @@
 safe_print_list_integers = \
     __import__('2-safe_print_list_integers').safe_print_list_integers
 
-my_list = []
+my_list = [1, 2, 3, 4]
 x = 0
 nb_print = safe_print_list_integers(my_list, x)
 print("{:d}".format(nb_print))
