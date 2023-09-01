@@ -2,17 +2,21 @@
 def safe_print_list_integers(my_list=[], x=0):
 
     cnt = 0
-    for i in my_list:
+
+    value = [b for b in my_list if isinstance(b, int)]
+
+    for i in value:
         cnt += 1
+
+    value = int("".join(map(str, value[:x])))
 
     try:
         if x <= cnt:
-            value = [b for b in my_list if isinstance(b, int)]
-            value = int("".join(map(str, value[:x])))
-            cnt = sum(1 for b in my_list if isinstance(b, int))
             print("{:d}".format(value))
             return min(x, cnt)
+
         else:
+            print(value, end="")
             raise IndexError("list index out of range")
 
     except IndexError:
