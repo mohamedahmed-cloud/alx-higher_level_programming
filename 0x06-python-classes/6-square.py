@@ -28,8 +28,8 @@ class Square:
             raise TypeError("size must be an integer")
 
     def my_print(self):
+        print("\n" * (self.position[1] - 1))
         for i in range(self.size):
-            print("\n" * (self.position[1] - 1))
             print(" " * self.position[0]+"#"*self.size)
         if self.size == 0:
             print()
