@@ -20,7 +20,7 @@ def safe_print_list_integers(my_list=[], x=0):
         if x <= length:
             if value:
                 print("{:d}".format(value))
-            return min(x, cnt)
+                return min(x, cnt)
         else:
             print(value, end="")
             raise IndexError("list index out of range")
