@@ -1,10 +1,8 @@
 #!/usr/bin/python3
 def list_division(my_list_1, my_list_2, list_length):
-    n1 = len(my_list_1)
-    n2 = len(my_list_2)
     result = []
 
-    for i in range(max(n1, n2)):
+    for i in range(list_length):
         try:
             result.append(my_list_1[i] / my_list_2[i])
         except IndexError:
