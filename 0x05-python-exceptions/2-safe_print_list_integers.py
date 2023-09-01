@@ -19,7 +19,8 @@ def safe_print_list_integers(my_list=[], x=0):
     try:
         if x <= length:
             if value:
-                print("{:d}".format(value))
+                print("{:d}".format(value), end="")
+            print()
             return min(x, cnt)
         else:
             print(value, end="")
