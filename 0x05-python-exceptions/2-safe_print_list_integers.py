@@ -7,8 +7,9 @@ def safe_print_list_integers(my_list=[], x=0):
 
     try:
         if x <= cnt:
-            value = int("".join(str(x) for x in my_list if isinstance(x, int)))
-            cnt = sum(1 for x in my_list if isinstance(x, int))
+            value = [b for b in my_list if isinstance(b, int)]
+            value = int("".join(map(str, value[:x])))
+            cnt = sum(1 for b in my_list if isinstance(b, int))
             print("{:d}".format(value))
             return min(x, cnt)
         else:
