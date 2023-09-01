@@ -11,7 +11,10 @@ def safe_print_list_integers(my_list=[], x=0):
     for i in value:
         cnt += 1
 
-    value = int("".join(map(str, value[:x])))
+    if value:
+        value = int("".join(map(str, value[:x])))
+    else:
+        value = 0
 
     try:
         if x <= length:
