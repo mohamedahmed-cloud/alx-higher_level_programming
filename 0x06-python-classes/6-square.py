@@ -33,7 +33,6 @@ class Square:
         if self.size == 0:
             print()
 
-    # position attribute.
     @property
     def position(self):
         return self.__position
