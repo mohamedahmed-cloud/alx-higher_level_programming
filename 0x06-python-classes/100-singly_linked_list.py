@@ -1,15 +1,25 @@
 #!/usr/bin/python3
+"""Implementation of Singly Linked List"""
+
+
 class Node:
+    """Node Class is Main Part of Singly Linked list Code"""
     def __init__(self, data, next_node=None):
+        """
+        Init method like a constructor
+        """
         self.data = data
         self.next_node = next_node
 
     @property
     def data(self):
+        """Getter Method for data
+        """
         return self.__data
 
     @data.setter
     def data(self, value):
+        """Setter Method for data"""
         if isinstance(value, int):
             self.__data = value
         else:
@@ -17,10 +27,12 @@ class Node:
 
     @property
     def next_node(self):
+        """Getter Method for next node"""
         return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
+        """Setter Method for next node"""
         if value is None or isinstance(value, Node):
             self.__next_node = value
         else:
@@ -28,7 +40,9 @@ class Node:
 
 
 class SinglyLinkedList:
+    """Singly Linked List Class"""
     def __str__(self):
+        """Method to print the Singly linked list when call the object"""
         res = ""
         head = self.__head
         while head:
@@ -39,9 +53,11 @@ class SinglyLinkedList:
         return res
 
     def __init__(self):
+        """Init method, like a constructor"""
         self.__head = None
 
     def sorted_insert(self, value):
+        """Method to insert in singly linked list by a sorted way"""
         head = self.__head
         if self.__head is None:
             self.__head = Node(value)
