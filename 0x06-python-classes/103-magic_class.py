@@ -2,6 +2,11 @@
 import math
 
 
+"""
+Magic Class Implementation.
+"""
+
+
 class MagicClass:
     """
     A magical class that performs calculations on a circle.
