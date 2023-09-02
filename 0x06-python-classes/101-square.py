@@ -34,7 +34,7 @@ class Square:
         for i in range(self.size):
             result += (" " * self.position[0]+"#"*self.size) + "\n"
 
-        return result[:-1]
+        return result[:-1] if result else result
 
     @property
     def position(self):
