@@ -24,24 +24,6 @@ class MagicClass:
         of the circle.
     """
     def __init__(self, radius=0):
-        """
-        Initialize a MagicClass instance with a given radius.
-
-        Args:
-            radius (float): The radius of the circle.
-        """
-        self.__radius = radius
-
-    def radius(self, radius):
-        """
-        Setter method to set the radius of the circle.
-
-        Args:
-            radius (float): The new radius for the circle.
-
-        Raises:
-            TypeError: If the provided radius is not a number (int or float).
-        """
         if not isinstance(radius, (int, float)):
             raise TypeError("radius must be a number")
         self.__radius = radius
