@@ -23,7 +23,7 @@ class MagicClass:
         circumference(self): Calculate and return the circumference
         of the circle.
     """
-    def __init__(self, radius):
+    def __init__(self, radius=0):
         """
         Initialize a MagicClass instance with a given radius.
 

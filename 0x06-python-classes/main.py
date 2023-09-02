@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-Square = __import__('103-magic_class')
+MagicClass = __import__('103-magic_class').MagicClass
 
-print(Square.__doc__)
-print(Square.MagicClass.__doc__)
-# print(Square.MyClass)
+mc = MagicClass()
