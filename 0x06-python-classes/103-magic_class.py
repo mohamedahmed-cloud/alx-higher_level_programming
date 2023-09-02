@@ -2,12 +2,11 @@
 import math
 
 
-"""
-Magic Class Implementation.
-"""
+"""Magic Class Implementation."""
 
 
 class MagicClass:
+    """ magic Class Function"""
     def __init__(self, radius):
         self.__radius = radius
 
