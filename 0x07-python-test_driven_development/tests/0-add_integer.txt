@@ -35,3 +35,8 @@ TypeError: a must be an integer
 
 >>> add_integer(1.4, 2.5)
 3
+
+>>> add_integer(None, None)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
