@@ -1,0 +1,37 @@
+# 0-add_integer.txt
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+check for two positive integers.
+>>> add_integer(1, 2)
+3
+
+check for two floats.
+>>> add_integer(1.0, 2.0)
+3
+
+Checks for only one value
+>>> add_integer(2)
+100
+
+# check b different type 
+
+>>> add_integer(1, "yousef")
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+>>> add_integer(1, True)
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+>>> add_integer("Yousef", "YOusef")
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+# check float Value
+
+>>> add_integer(1.4, 2.5)
+3
