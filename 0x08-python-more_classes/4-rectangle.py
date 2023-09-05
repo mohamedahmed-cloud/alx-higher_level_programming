@@ -52,7 +52,6 @@ class Rectangle:
         if not self.width or not self.height:
             return ""
         return (("#" * self.width + "\n") * self.height)[:-1]
+
     def __repr__(self):
-        if not self.width or not self.height:
-            return ""
-        return (("#" * self.width + "\n") * self.height)[:-1]
+        return f"Rectangle({self.__width},{self.__height})"

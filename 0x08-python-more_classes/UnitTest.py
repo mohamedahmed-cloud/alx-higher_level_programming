@@ -38,14 +38,23 @@ class RectangleTest(unittest.TestCase):
         self.assertAlmostEqual(r.area(), 0)
         self.assertAlmostEqual(r.perimeter(), 0)
     # 3-rectangle.py
-    def test_test_str(self):
+    def test_str(self):
         r = Rectangle(0,0)
         self.assertEqual(str(r), "")
         r = Rectangle(1,2)
         self.assertEqual(str(r), "#\n#")
         r = Rectangle(3,3)
         self.assertEqual(str(r), "###\n###\n###")
-        
+    
+    def test_repr(self):
+        r = Rectangle(0, 0)
+        self.assertEqual(repr(r), "Rectangle(0,0)")
+        r = Rectangle(1,2)
+        self.assertEqual(repr(r), "Rectangle(1,2)")
+        r = Rectangle(3, 3)
+        self.assertEqual(repr(r), "Rectangle(3,3)")
+        new_r = eval(repr(r))
+        self.assertEqual(repr(new_r),"Rectangle(3,3)" )
 
 
 
