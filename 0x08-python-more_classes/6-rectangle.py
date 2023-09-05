@@ -9,7 +9,7 @@ class Rectangle:
         Rectangle Class - Implementation of Class Rectangle
     """
     number_of_instances = 0
-    
+
     def __init__(self, width=0, height=0):
         Rectangle.number_of_instances += 1
         self.width = width
@@ -60,5 +60,5 @@ class Rectangle:
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        Rectangle.number_of_instances = 1
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
