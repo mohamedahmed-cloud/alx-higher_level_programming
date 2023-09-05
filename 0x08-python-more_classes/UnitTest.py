@@ -80,6 +80,28 @@ class RectangleTest(unittest.TestCase):
         r = Rectangle(2, 3)
         r.print_symbol = "Mohamed"
         self.assertEqual(str(r), "MohamedMohamed\nMohamedMohamed\nMohamedMohamed")
+    
+    def test_rect_area(self):
+        r1 = Rectangle(1,1)
+        r2 = "Yousef"
+        self.assertRaises(TypeError, lambda: Rectangle.bigger_or_equal(r1, r2))
+        r1 = "Yousef"
+        r2 = Rectangle(2,2)
+        self.assertRaises(TypeError, lambda: Rectangle.bigger_or_equal(r1, r2))
+
+        r1 = Rectangle(2, 3)
+        r2 = Rectangle(3, 2)
+        self.assertEqual(r1, Rectangle.bigger_or_equal(r1, r2))
+
+        r1 = Rectangle(3, 3)
+        r2 = Rectangle(3, 2)
+        self.assertEqual(r1, Rectangle.bigger_or_equal(r1, r2))
+
+        r1 = Rectangle(2, 3)
+        r2 = Rectangle(3, 3)
+        self.assertEqual(r2, Rectangle.bigger_or_equal(r1, r2))
+
+
 
 
 
