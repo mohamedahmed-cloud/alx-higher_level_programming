@@ -46,7 +46,7 @@ class RectangleTest(unittest.TestCase):
         self.assertEqual(str(r), "#\n#")
         r = Rectangle(3,3)
         self.assertEqual(str(r), "###\n###\n###")
-    
+    # 4-rectangle.py
     def test_repr(self):
         r = Rectangle(0, 0)
         self.assertEqual(repr(r), "Rectangle(0, 0)")
@@ -54,7 +54,7 @@ class RectangleTest(unittest.TestCase):
         self.assertEqual(repr(r), "Rectangle(1, 2)")
         r = Rectangle(3, 3)
         self.assertEqual(repr(r), "Rectangle(3, 3)")
-
+    # 5-rectangle.py
     @patch('builtins.print')
     def test_del(self, print):
         r = Rectangle(0, 0)
@@ -63,7 +63,7 @@ class RectangleTest(unittest.TestCase):
         r = Rectangle(5, 5)
         del r
         print.assert_called_with("Bye rectangle...")
-
+    # 6-rectangle.py
     def test_class_attribute(self):
         r = Rectangle(0, 0)
         self.assertAlmostEqual(Rectangle.number_of_instances, 1)
@@ -72,7 +72,7 @@ class RectangleTest(unittest.TestCase):
         self.assertAlmostEqual(Rectangle.number_of_instances, 3)
         del r2
         self.assertAlmostEqual(Rectangle.number_of_instances, 2)
-
+    # 7-rectangle.py
     def test_print_symbol(self):
         r  =  Rectangle(1,1)
         r.print_symbol = "Yousef"
@@ -80,7 +80,7 @@ class RectangleTest(unittest.TestCase):
         r = Rectangle(2, 3)
         r.print_symbol = "Mohamed"
         self.assertEqual(str(r), "MohamedMohamed\nMohamedMohamed\nMohamedMohamed")
-    
+    # 8-rectangle.py
     def test_rect_area(self):
         r1 = Rectangle(1,1)
         r2 = "Yousef"
@@ -101,6 +101,10 @@ class RectangleTest(unittest.TestCase):
         r2 = Rectangle(3, 3)
         self.assertEqual(r2, Rectangle.bigger_or_equal(r1, r2))
 
+    # 9-rectangle.py
+    def test_class_method(self):
+        r = Rectangle.square(4)
+        self.assertAlmostEqual(r.area(), 16)
 
 
 
