@@ -18,4 +18,9 @@ class RectangleTest(unittest.TestCase):
         r = Rectangle(1,3)
         self.assertAlmostEquals(r.width, 1)
         self.assertAlmostEquals(r.height, 3)
+        self.assertRaises(ValueError, lambda: Rectangle(-2, 1))
+        self.assertRaises(ValueError, lambda: Rectangle(2, -1))
+        self.assertRaises(ValueError, lambda: Rectangle(2, "Yousef"))
+        self.assertRaises(ValueError, lambda: Rectangle("Yousef", 1))
+    
 
