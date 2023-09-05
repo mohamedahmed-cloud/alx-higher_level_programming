@@ -66,11 +66,20 @@ class RectangleTest(unittest.TestCase):
 
     def test_class_attribute(self):
         r = Rectangle(0, 0)
-        # Rectangle(2, 3)
-        # Rectangle(2, 3)
-        print(Rectangle.number_of_instances)
-        print("Yousef")
-        # self.assertAlmostEqual(Rectangle.number_of_instances, 2)
-        # self.assertAlmostEqual(Rectangle.number_of_instances, 2)
+        self.assertAlmostEqual(Rectangle.number_of_instances, 1)
+        r2 = Rectangle(2, 3)
+        r3 = Rectangle(2, 5)
+        self.assertAlmostEqual(Rectangle.number_of_instances, 3)
+        del r2
+        self.assertAlmostEqual(Rectangle.number_of_instances, 2)
+
+    def test_print_symbol(self):
+        r  =  Rectangle(1,1)
+        r.print_symbol = "Yousef"
+        self.assertEqual(str(r), "Yousef")
+        r = Rectangle(2, 3)
+        r.print_symbol = "Mohamed"
+        self.assertEqual(str(r), "MohamedMohamed\nMohamedMohamed\nMohamedMohamed")
+
 
 

@@ -1,9 +1,10 @@
+#!/usr/bin/python3
 # 98
 class User:
     id = 1
 
 u = User()
-# u.id = 2
+u.id = 2
 User.id = 98
 print(u.id)
 
