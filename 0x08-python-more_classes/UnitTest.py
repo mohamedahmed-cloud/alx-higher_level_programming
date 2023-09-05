@@ -8,9 +8,14 @@ Rectangle = getattr(module, className)
 
 
 class RectangleTest(unittest.TestCase):
+    # 0-rectangle.py
     def test_isInstance(self):
         r = Rectangle()
         self.assertIsInstance(r, Rectangle)
 
-
+    # 1-rectangle.py
+    def test_CheckValue(self):
+        r = Rectangle(1,3)
+        self.assertAlmostEquals(r.width, 1)
+        self.assertAlmostEquals(r.height, 3)
 
