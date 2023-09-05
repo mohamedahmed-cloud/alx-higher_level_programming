@@ -1,3 +1,5 @@
-#!/usr/bin/python3
-a = 1
-print(1 == 1)
+# #!/usr/bin/python3
+# l = [1]
+# l2 = l
+# l = l + [2]
+# print(l2)
