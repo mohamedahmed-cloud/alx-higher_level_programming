@@ -103,9 +103,8 @@ class RectangleTest(unittest.TestCase):
 
     # 9-rectangle.py
     def test_class_method(self):
-        r = Rectangle.square(4)
-        self.assertAlmostEqual(r.area(), 16)
-
-
+        r = Rectangle.square(6)
+        assert r.area() == 36
+        assert r.perimeter() == 24
 
 
