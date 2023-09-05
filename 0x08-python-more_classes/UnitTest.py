@@ -53,8 +53,8 @@ class RectangleTest(unittest.TestCase):
         self.assertEqual(repr(r), "Rectangle(1,2)")
         r = Rectangle(3, 3)
         self.assertEqual(repr(r), "Rectangle(3,3)")
-        new_r = eval(repr(r))
-        self.assertEqual(repr(new_r),"Rectangle(3,3)" )
+        r = Rectangle(-3,-3)
+        self.assertEqual(repr(r),"Rectangle(-3,-3)" )
 
 
 
