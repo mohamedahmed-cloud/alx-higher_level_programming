@@ -65,9 +65,9 @@ class RectangleTest(unittest.TestCase):
         print.assert_called_with("Bye rectangle...")
 
     def test_class_attribute(self):
-        Rectangle(0, 0)
-        Rectangle(2, 3)
-        Rectangle(2, 3)
+        r = Rectangle(0, 0)
+        # Rectangle(2, 3)
+        # Rectangle(2, 3)
         print(Rectangle.number_of_instances)
         print("Yousef")
         # self.assertAlmostEqual(Rectangle.number_of_instances, 2)
