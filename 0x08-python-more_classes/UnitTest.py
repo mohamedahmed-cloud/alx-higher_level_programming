@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import unittest
 from sys import argv
+from unittest.mock import patch
 
 className = argv[-1][2:-3].capitalize()
 module = __import__(argv[-1][:-3])
@@ -53,6 +54,15 @@ class RectangleTest(unittest.TestCase):
         self.assertEqual(repr(r), "Rectangle(1, 2)")
         r = Rectangle(3, 3)
         self.assertEqual(repr(r), "Rectangle(3, 3)")
+
+    @patch('builtins.print')
+    def test_del(self, print):
+        r = Rectangle(0, 0)
+        del r
+        print.assert_called_with("Bye rectangle...")
+        r = Rectangle(5, 5)
+        del r
+        print.assert_called_with("Bye rectangle...")
 
 
 
