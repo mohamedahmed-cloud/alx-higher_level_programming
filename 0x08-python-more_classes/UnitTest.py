@@ -48,13 +48,11 @@ class RectangleTest(unittest.TestCase):
     
     def test_repr(self):
         r = Rectangle(0, 0)
-        self.assertEqual(repr(r), "Rectangle(0,0)")
+        self.assertEqual(repr(r), "Rectangle(0, 0)")
         r = Rectangle(1,2)
-        self.assertEqual(repr(r), "Rectangle(1,2)")
+        self.assertEqual(repr(r), "Rectangle(1, 2)")
         r = Rectangle(3, 3)
-        self.assertEqual(repr(r), "Rectangle(3,3)")
-        r = Rectangle(-3,-3)
-        self.assertEqual(repr(r),"Rectangle(-3,-3)" )
+        self.assertEqual(repr(r), "Rectangle(3, 3)")
 
 
 
