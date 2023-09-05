@@ -37,5 +37,15 @@ class RectangleTest(unittest.TestCase):
         r = Rectangle(10)
         self.assertAlmostEqual(r.area(), 0)
         self.assertAlmostEqual(r.perimeter(), 0)
+    # 3-rectangle.py
+    def test_test_str(self):
+        r = Rectangle(0,0)
+        self.assertEqual(str(r), "")
+        r = Rectangle(1,2)
+        self.assertEqual(str(r), "#\n#")
+        r = Rectangle(3,3)
+        self.assertEqual(str(r), "###\n###\n###")
+        
+
 
 
