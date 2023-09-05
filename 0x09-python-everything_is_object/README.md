@@ -1,0 +1,1 @@
+- Every thing in python is an object.
