@@ -34,4 +34,8 @@ class RectangleTest(unittest.TestCase):
         r = Rectangle(10, 10)
         self.assertAlmostEqual(r.area(), 100)
         self.assertAlmostEqual(r.perimeter(), 40)
+        r = Rectangle(10)
+        self.assertAlmostEqual(r.area(), 0)
+        self.assertAlmostEqual(r.perimeter(), 0)
+
 
