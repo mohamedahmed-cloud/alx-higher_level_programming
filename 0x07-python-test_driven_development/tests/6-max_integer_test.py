@@ -20,8 +20,9 @@ class TestMaxInteger(unittest.TestCase):
     def test_correct_answer(self):
         self.assertAlmostEqual(max_integer([1, 2, 3, 4]), 4)
         self.assertAlmostEqual(max_integer([1, -4, -5, -6]), 1)
-        self.assertAlmostEqual(max_integer([-1, 0, 3.4, 5.6]), 5.6)
+        self.assertAlmostEqual(max_integer([-1, 4, 3, 5]), 5)
         self.assertAlmostEqual(max_integer([-1, 0, 3.4, 9]), 9)
         self.assertAlmostEqual(max_integer([]), None)
         self.assertAlmostEqual(max_integer([300000000000]), 300000000000)
         self.assertAlmostEqual(max_integer([-1]), -1)
+        self.assertAlmostEqual(max_integer([-1, -2]), -1)
