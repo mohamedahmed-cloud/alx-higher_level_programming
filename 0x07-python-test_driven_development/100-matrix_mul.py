@@ -65,7 +65,7 @@ def check_one_one_type(curr_matrix, message):
         for j in i:
             if type(j) not in [int, float]:
                 raise TypeError(f"{message}\
-                                should contain only integers or floats")
+ should contain only integers or floats")
 
 
 def check_same_size(curr_matrix, message):
