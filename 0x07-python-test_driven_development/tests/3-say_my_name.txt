@@ -17,3 +17,7 @@ My name is Mohamed
 
 >>> say_my_name("Mohamed", "Yousef")
 My name is Mohamed Yousef
+
+
+>>> say_my_name()
+My name is  
