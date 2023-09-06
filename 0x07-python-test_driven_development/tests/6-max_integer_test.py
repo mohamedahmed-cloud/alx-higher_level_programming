@@ -26,3 +26,6 @@ class TestMaxInteger(unittest.TestCase):
         self.assertAlmostEqual(max_integer([300000000000]), 300000000000)
         self.assertAlmostEqual(max_integer([-1]), -1)
         self.assertAlmostEqual(max_integer([-1, -2]), -1)
+
+    def test_no_integer(self):
+        self.assertRaises(TypeError, max_integer, True)
