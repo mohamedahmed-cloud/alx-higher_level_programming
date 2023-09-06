@@ -1,29 +1,5 @@
 #!/usr/bin/python3
-Rectangle = __import__('7-rectangle').Rectangle
+magic_string = __import__('100-magic_string').magic_string
 
-my_rectangle_1 = Rectangle(8, 4)
-print(my_rectangle_1)
-print("--")
-my_rectangle_1.print_symbol = "&"
-print(my_rectangle_1)
-print("--")
-
-my_rectangle_2 = Rectangle(2, 1)
-print(my_rectangle_2)
-print("--")
-Rectangle.print_symbol = "C"
-print(my_rectangle_2)
-print("--")
-
-my_rectangle_3 = Rectangle(7, 3)
-print(my_rectangle_3)
-
-print("--")
-
-my_rectangle_3.print_symbol = ["C", "is", "fun!"]
-print(my_rectangle_3)
-
-print("--")
-my_rectangle_4 = Rectangle(1, 1)
-my_rectangle_4.print_symbol = "Yousef"
-print(my_rectangle_4)
+for i in range(10):
+    print(magic_string())
