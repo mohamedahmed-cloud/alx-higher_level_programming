@@ -4,7 +4,7 @@ matrix_divided - divide 2 d array on div number.
 """
 
 
-def matrix_divided(matrix, div):
+def matrix_divided(matrix=None, div=None):
     """
     matrix_divided: divide 2D array on div number.
 
@@ -15,6 +15,10 @@ def matrix_divided(matrix, div):
     return:
         return the new matrix without changine old one.
     """
+    if matrix is None:
+        return None
+    elif div is None:
+        return matrix
 
     for i in matrix:
         if type(i) is not list:
