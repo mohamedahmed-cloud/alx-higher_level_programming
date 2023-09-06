@@ -100,4 +100,4 @@ ValueError: matmul: Input operand 0 does not have enough dimensions (has 0, gufu
 >>> lazy_matrix_mul([[1,2], [3, 4]], [[1], ["yousef"]])
 Traceback (most recent call last):
     ....
-ValueError: matmul: Input operand 0 does not have enough dimensions (has 0, gufunc core with signature (n?,k),(k,m?)->(n?,m?) requires 1)
+numpy.core._exceptions._UFuncNoLoopError: ufunc 'matmul' did not contain a loop with signature matching types (dtype('int64'), dtype('<U21')) -> None
