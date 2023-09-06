@@ -4,10 +4,10 @@ unit test for max integer function.
 """
 
 import unittest
-max_integer = __import__("main").max_integer
+max_integer = __import__('6-max_integer').max_integer
 
 
-class MaxIntegerTest(unittest.TestCase):
+class TestMaxInteger(unittest.TestCase):
     # def test_type_value(self):
     #     self.assertRaises(TypeError, max_integer, "Yousef")
     #     self.assertRaises(TypeError, max_integer, ["Yousef"])
