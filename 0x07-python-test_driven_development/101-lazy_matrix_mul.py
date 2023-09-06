@@ -16,34 +16,40 @@ def lazy_matrix_mul(m_a, m_b):
     return:
         return the new matrix after multiplication.
     """
+    # m_a = np.array(m_a)
+    # m_b = np.array(m_b)
+    # if m_a.ndim != 2:
+    #     raise TypeError(f"m_a must be a list of lists")
+    # elif m_b.ndim != 2:
+    #     raise TypeError(f"m_b must be a list of lists")
 
-    # check empty array
-    if m_a == [] or m_a == [[]]:
-        raise ValueError("m_a can't be empty")
-    if m_b == [] or m_b == [[]]:
-        raise ValueError("m_b can't be empty")
+    # # check empty array
+    # if m_a == [] or m_a == [[]]:
+    #     raise ValueError("m_a can't be empty")
+    # if m_b == [] or m_b == [[]]:
+    #     raise ValueError("m_b can't be empty")
 
-    # check type of m_a and m_b
-    if type(m_a) is not list:
-        raise TypeError("m_a must be a list")
+    # # check type of m_a and m_b
+    # if type(m_a) is not list:
+    #     raise TypeError("m_a must be a list")
 
-    if type(m_b) is not list:
-        raise TypeError("m_b must be a list")
+    # if type(m_b) is not list:
+    #     raise TypeError("m_b must be a list")
 
-    check_2D(m_a, "m_a")
-    check_2D(m_b, "m_b")
+    # check_2D(m_a, "m_a")
+    # check_2D(m_b, "m_b")
 
-    check_one_one_type(m_a, "m_a")
-    check_one_one_type(m_b, "m_b")
-    check_same_size(m_a, "m_a")
-    check_same_size(m_b, "m_b")
+    # check_one_one_type(m_a, "m_a")
+    # check_one_one_type(m_b, "m_b")
+    # check_same_size(m_a, "m_a")
+    # check_same_size(m_b, "m_b")
 
-    arr1_a, arr1_b = len(m_a), len(m_a[0])
-    arr2_a, arr2_b = len(m_b), len(m_b[0])
-    if arr1_b != arr2_a:
-        raise ValueError("m_a and m_b can't be multiplied")
+    # arr1_a, arr1_b = len(m_a), len(m_a[0])
+    # arr2_a, arr2_b = len(m_b), len(m_b[0])
+    # if arr1_b != arr2_a:
+    #     raise ValueError("m_a and m_b can't be multiplied")
 
-    result = [[0 for j in range(arr2_b)] for i in range(arr1_a)]
+    # result = [[0 for j in range(arr2_b)] for i in range(arr1_a)]
 
     # print(np.dot(m_a, m_b))
     return np.dot(m_a, m_b)
