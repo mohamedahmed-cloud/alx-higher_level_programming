@@ -3,7 +3,7 @@ from sys import argv
 
 # prepare moudle
 moduleName = argv[1][:-3]
-functionName = argv[1][2:-3]
+functionName = argv[1][4:-3]
 module = __import__(moduleName)
 function = getattr(module, functionName)
 
