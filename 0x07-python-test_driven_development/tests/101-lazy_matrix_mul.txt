@@ -9,20 +9,28 @@
 >>> lazy_matrix_mul([1], [])
 Traceback (most recent call last):
     ....
-ValueError: shapes (1,) and (0,) not aligned: 1 (dim 0) != 0 (dim 0)
+ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 0 is different from 1)
+
+
+
+
+
+
+
 
 # input Type
 
 >>> lazy_matrix_mul("Yousef", "YOusef")
 Traceback (most recent call last):
     ....
-numpy.core._exceptions._UFuncNoLoopError: ufunc 'multiply' did not contain a loop with signature matching types (dtype('<U6'), dtype('<U6')) -> None
+numpy.core._exceptions._UFuncNoLoopError: ufunc 'matmul' did not contain a loop with signature matching types (dtype('<U6'), dtype('<U6')) -> None
 
 
 >>> lazy_matrix_mul([[1]], "YOusef")
 Traceback (most recent call last):
     ....
-numpy.core._exceptions._UFuncNoLoopError: ufunc 'multiply' did not contain a loop with signature matching types (dtype('<U1'), dtype('<U6')) -> None
+numpy.core._exceptions._UFuncNoLoopError: ufunc 'matmul' did not contain a loop with signature matching types (dtype('int64'), dtype('<U6')) -> None
+
 
 
 
@@ -30,13 +38,12 @@ numpy.core._exceptions._UFuncNoLoopError: ufunc 'multiply' did not contain a loo
 >>> lazy_matrix_mul([["1"]], [[1]])
 Traceback (most recent call last):
     ....
-ValueError: data type must provide an itemsize
+numpy.core._exceptions._UFuncNoLoopError: ufunc 'matmul' did not contain a loop with signature matching types (dtype('<U1'), dtype('int64')) -> None
 
 >>> lazy_matrix_mul([[1]], [["1"]])
 Traceback (most recent call last):
     ....
-ValueError: data type must provide an itemsize
-
+numpy.core._exceptions._UFuncNoLoopError: ufunc 'matmul' did not contain a loop with signature matching types (dtype('int64'), dtype('<U1')) -> None
 
 
 
@@ -53,17 +60,13 @@ Traceback (most recent call last):
 ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
 
 
-
-
-
-
-
-
 # can't multiple
 >>> lazy_matrix_mul([[1,2]], [[1,2]])
 Traceback (most recent call last):
     ....
-ValueError: shapes (1,2) and (1,2) not aligned: 2 (dim 1) != 1 (dim 0)
+ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 1 is different from 2)
+
+
 
 
 >>> lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
@@ -74,5 +77,11 @@ array([[ 7, 10],
        [15, 22]])
 
 >>> lazy_matrix_mul()
+Traceback (most recent call last):
+    ....
+TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
 
-
+>>> lazy_matrix_mul(True, True)
+Traceback (most recent call last):
+    ....
+ValueError: matmul: Input operand 0 does not have enough dimensions (has 0, gufunc core with signature (n?,k),(k,m?)->(n?,m?) requires 1)
