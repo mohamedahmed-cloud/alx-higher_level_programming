@@ -20,4 +20,4 @@ My name is Mohamed Yousef
 
 
 >>> say_my_name()
-My name is   
+My name is  
