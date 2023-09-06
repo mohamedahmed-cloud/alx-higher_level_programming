@@ -7,17 +7,35 @@ TypeError: text must be a string
 
 >>> text_indentation(" Hello Yousef?   How are you.     Tell me more about you:        ")
 Hello Yousef?
+<BLANKLINE>
 How are you.
+<BLANKLINE>
 Tell me more about you:
 
 
 >>> text_indentation("Hello Yousef?How are you.     Tell me more about you:        ")
 Hello Yousef?
+<BLANKLINE>
 How are you.
+<BLANKLINE>
 Tell me more about you:
 
 >>> text_indentation("        ?Hello Yousef?How are you.     Tell me more about you:        ")
 ?
+<BLANKLINE>
 Hello Yousef?
+<BLANKLINE>
 How are you.
+<BLANKLINE>
 Tell me more about you:
+
+>>> text_indentation("Mohamed Yousef Test")
+Mohamed Yousef Test
+
+>>> text_indentation("Holberton School")
+Holberton School
+
+>>> text_indentation("Holberton.School")
+Holberton.
+<BLANKLINE>
+School

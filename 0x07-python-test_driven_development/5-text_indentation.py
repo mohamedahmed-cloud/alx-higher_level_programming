@@ -24,7 +24,7 @@ def text_indentation(text):
         if i in check:
             curr = curr.strip()
             result += curr
-            result += "\n"
+            result += "\n\n"
             curr = ""
 
     curr = curr.strip()
