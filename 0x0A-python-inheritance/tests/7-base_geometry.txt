@@ -1,0 +1,23 @@
+>>> parent_Class = __import__("7-base_geometry").BaseGeometry
+
+>>> obj = parent_Class()
+
+>>> obj.integer_validator("Mohamed", 12)
+
+>>> obj.integer_validator("Mohamed", 0)
+Traceback (most recent call last):
+    ....
+ValueError: Mohamed must be greater than 0
+
+
+>>> obj.integer_validator("Mohamed", -12)
+Traceback (most recent call last):
+    ....
+ValueError: Mohamed must be greater than 0
+
+
+>>> obj.integer_validator("Mohamed", "Yousef")
+Traceback (most recent call last):
+    ....
+TypeError: Mohamed must be an integer
+
