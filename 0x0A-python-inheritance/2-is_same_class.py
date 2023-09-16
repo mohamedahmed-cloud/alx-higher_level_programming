@@ -2,6 +2,8 @@
 """
 is_same_class: class check the type of of a class
 """
+
+
 def is_same_class(obj, a_class):
     """
     args:
