@@ -12,5 +12,8 @@ def add_attribute(obj, attribute, value):
      2. attribute - attribute name
      3. value - attribute value
     """
-    # obj.__dict__[attribute] = value [or]
-    setattr(obj, attribute, value)
+    # obj.__dict__[attribute] = value #[or]
+    try:
+        setattr(obj, attribute, value)
+    except Exception:
+        raise TypeError("can't add new attribute")
