@@ -4,6 +4,6 @@ pycodestyle $1
 if [ $? -ne 1 ]; then
 	git add *
 	git commit -m "UpLoad File $1"
-	git push *
+	git push 
 
 fi
