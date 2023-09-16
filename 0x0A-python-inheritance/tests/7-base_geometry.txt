@@ -34,3 +34,9 @@ TypeError: Mohamed must be an integer
 Traceback (most recent call last):
     ....
 TypeError: Mohamed must be an integer
+
+
+>>> obj.integer_validator("Mohamed", True)
+Traceback (most recent call last):
+    ....
+TypeError: Mohamed must be an integer
