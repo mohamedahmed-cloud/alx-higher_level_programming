@@ -40,3 +40,25 @@ TypeError: Mohamed must be an integer
 Traceback (most recent call last):
     ....
 TypeError: Mohamed must be an integer
+
+>>> obj.integer_validator("Mohamed", None)
+Traceback (most recent call last):
+    ....
+TypeError: Mohamed must be an integer
+
+>>> obj.integer_validator("Mohamed", {1.2})
+Traceback (most recent call last):
+    ....
+TypeError: Mohamed must be an integer
+
+>>> obj.integer_validator("Mohamed", (1,2,4))
+Traceback (most recent call last):
+    ....
+TypeError: Mohamed must be an integer
+
+>>> obj.integer_validator("Mohamed")
+
+>>> obj.area()
+Traceback (most recent call last):
+    ....
+Exception: area() is not implemented
