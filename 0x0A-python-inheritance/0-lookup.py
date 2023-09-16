@@ -2,6 +2,8 @@
 """
 lookup: return all info about any object
 """
+
+
 def lookup(obj):
     """
     args:
