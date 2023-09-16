@@ -21,3 +21,8 @@ Traceback (most recent call last):
     ....
 TypeError: Mohamed must be an integer
 
+
+>>> obj.integer_validator("", 12)
+Traceback (most recent call last):
+    ....
+TypeError: Mohamed must be an integer
