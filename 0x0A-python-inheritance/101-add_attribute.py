@@ -13,7 +13,7 @@ def add_attribute(obj, attribute, value):
      3. value - attribute value
     """
     # obj.__dict__[attribute] = value #[or]
-    try:
+    if type(obj) not in [int, float, complex, str, list, dict, tuple, set]:
         setattr(obj, attribute, value)
-    except Exception:
+    else:
         raise TypeError("can't add new attribute")
