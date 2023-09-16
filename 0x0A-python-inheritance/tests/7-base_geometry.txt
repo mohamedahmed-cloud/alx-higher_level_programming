@@ -67,3 +67,4 @@ Exception: area() is not implemented
 >>> obj.integer_validator("Yousef")
 
 >>> obj.integer_validator()
+
