@@ -68,3 +68,8 @@ Exception: area() is not implemented
 
 >>> obj.integer_validator()
 
+>>> obj.integer_validator( None)
+
+
+
+
