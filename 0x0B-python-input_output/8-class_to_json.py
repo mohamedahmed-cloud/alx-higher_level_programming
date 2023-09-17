@@ -11,5 +11,9 @@ import json
 
 
 def class_to_json(obj):
+    """
+    args:
+       obj: object to be serialized
+    """
     print(obj)
     return json.dumps(obj.__dict__)
