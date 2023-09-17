@@ -7,6 +7,15 @@ append_after - function that inserts a line of text to a file,
 
 
 def append_after(filename="", search_string="", new_string=""):
+    """
+    args:
+        filename: the file read and write from it
+        search_string: the string to search for in filename
+        new_string: the string to insert after each line
+        containing search_string
+    Return:
+        filename: modified file name
+    """
     with open(filename, 'r+', encoding="utf-8") as file:
         res = ""
         for line in file:
