@@ -43,10 +43,16 @@ try:
         cnt += 1
 
         all = line.split()
-        status = all[-2]
-        size += int(all[-1])
-        # print(line)
-        status_dict[int(status)] += 1
+        try:
+            status = all[-2]
+            status_dict[int(status)] += 1
+        except Exception:
+            pass
+        try:
+            size += int(all[-1])
+        except Exception:
+            pass
+
         if cnt != 0 and cnt % 10 == 0:
             print_data(size, status_dict)
             cnt = 0
