@@ -22,9 +22,11 @@ Input format: <IP Address> - [<date>] "GET /projects/260 HTTP/1.1"
 
 
 import sys
+from time import sleep
 
 
-status_dict = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
+initial = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
+status_dict = initial.copy()
 size = 0
 
 
@@ -36,13 +38,19 @@ def print_data(size, status_dict):
 
 
 try:
+    cnt = 0
     for line in sys.stdin:
-        for i in range(10):
-            all = input().split()
-            status = all[-2]
-            size += int(all[-1])
-            status_dict[int(status)] += 1
-        print_data(size, status_dict)
+        cnt += 1
+
+        all = line.split()
+        status = all[-2]
+        size += int(all[-1])
+        # print(line)
+        status_dict[int(status)] += 1
+        if cnt != 0 and cnt % 10 == 0:
+            print_data(size, status_dict)
+            cnt = 0
+            status_dict = initial.copy()
 
 except KeyboardInterrupt:
     print_data(size, status_dict)
