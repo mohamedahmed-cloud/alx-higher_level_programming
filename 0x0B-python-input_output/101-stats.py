@@ -19,6 +19,8 @@ Input format: <IP Address> - [<date>] "GET /projects/260 HTTP/1.1"
 
     status codes should be printed in ascending order
 """
+
+
 while True:
     status_dict = {200: 0, 301: 0, 400: 0, 401: 0,
                    403: 0, 404: 0, 405: 0, 500: 0}
