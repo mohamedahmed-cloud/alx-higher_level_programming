@@ -16,4 +16,4 @@ def pascal_triangle(n):
             curr.append(res[i - 1][j - 1] + res[i - 1][j])
         curr.append(1)
         res.append(curr)
-    return res
+    return res if n >= 1 else []
