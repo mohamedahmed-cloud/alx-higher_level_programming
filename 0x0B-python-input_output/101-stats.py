@@ -55,8 +55,8 @@ try:
         if cnt != 0 and cnt % 10 == 0:
             print_data()
             cnt = 0
-            status_dict = initial.copy()
-            size = 0
+            # status_dict = initial.copy()
+            # size = 0
     print_data()
 except KeyboardInterrupt:
     print_data()
