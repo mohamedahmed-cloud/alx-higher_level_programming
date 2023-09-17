@@ -22,7 +22,6 @@ Input format: <IP Address> - [<date>] "GET /projects/260 HTTP/1.1"
 
 
 import sys
-from time import sleep
 
 
 initial = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
@@ -30,7 +29,7 @@ status_dict = initial.copy()
 size = 0
 
 
-def print_data(size, status_dict):
+def print_data():
     print(f"File size: {size}")
     for key, value in status_dict.items():
         if value:
@@ -54,10 +53,11 @@ try:
             pass
 
         if cnt != 0 and cnt % 10 == 0:
-            print_data(size, status_dict)
+            print_data()
             cnt = 0
             status_dict = initial.copy()
+            size = 0
 
 except KeyboardInterrupt:
-    print_data(size, status_dict)
+    print_data()
     raise
