@@ -45,6 +45,6 @@ class Student:
         Return:
             that replaces all attributes of the Student instance:
         """
-        self.first_name = json.get("first_name")
-        self.last_name = json.get("last_name")
-        self.age = json.get("age")
+        self.first_name = json.get("first_name") or self.first_name
+        self.last_name = json.get("last_name") or self.last_name
+        self.age = json.get("age") or self.age
