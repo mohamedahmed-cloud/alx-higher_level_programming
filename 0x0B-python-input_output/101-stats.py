@@ -57,7 +57,7 @@ try:
             cnt = 0
             status_dict = initial.copy()
             size = 0
-
+    print_data()
 except KeyboardInterrupt:
     print_data()
     raise
