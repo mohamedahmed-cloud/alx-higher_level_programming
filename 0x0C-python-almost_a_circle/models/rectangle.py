@@ -81,5 +81,6 @@ class Rectangle(Base):
         """
         display - display the rectangle using # character.
         """
-        res = (("#" * self.width + "\n") * self.height)[:-1]
+
+        res = (("#" * self.width) + "\n") * self.height
         print(res, end="")

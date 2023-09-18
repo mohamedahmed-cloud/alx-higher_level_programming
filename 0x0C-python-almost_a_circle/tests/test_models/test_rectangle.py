@@ -1,4 +1,6 @@
 import unittest
+from unittest.mock import patch
+from io import StringIO
 # import rectangle
 from models.rectangle import Rectangle
 
@@ -52,7 +54,7 @@ class TestRectangle(unittest.TestCase):
             Rectangle(1, 1, "Yousef", 1).x
         with self.assertRaises(TypeError):
             Rectangle(1, 1, 1, "Yousef").y
-    
+
     def test_area(self):
         rectangle = Rectangle(2, 4, 1, 1)
         self.assertAlmostEqual(rectangle.area(), 8)
@@ -60,3 +62,24 @@ class TestRectangle(unittest.TestCase):
         self.assertAlmostEqual(rectangle.area(), 1)
         rectangle = Rectangle(10, 20, 1, 1)
         self.assertAlmostEqual(rectangle.area(), 200)
+
+    @patch("sys.stdout", new_callable=StringIO)
+    def test_display_small(self, mock):
+        rectangle1 =Rectangle(1, 1, 1, 1)
+        rectangle1.display()
+        excepted_value1 = mock.getvalue()
+        self.assertEqual(excepted_value1,"#\n")
+
+    @patch("sys.stdout", new_callable=StringIO)
+    def test_display_medium(self, mock):
+        rectangle2 =Rectangle(2, 3, 1, 1)
+        rectangle2.display()
+        excepted_value2 = mock.getvalue()
+        self.assertEqual(excepted_value2,"##\n##\n##\n")
+
+    @patch("sys.stdout", new_callable=StringIO)
+    def test_display_large(self, mock):
+        rectangle2 =Rectangle(10, 3, 1, 1)
+        rectangle2.display()
+        excepted_value2 = mock.getvalue()
+        self.assertEqual(excepted_value2,"##########\n##########\n##########\n")
