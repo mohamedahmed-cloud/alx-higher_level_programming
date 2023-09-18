@@ -11,6 +11,7 @@ class Base:
     """
      base class - will be the base of all class
     """
+
     __nb_objects = 0
 
     def __init__(self, id=None):
