@@ -81,8 +81,8 @@ class Rectangle(Base):
         """
         display - display the rectangle using # character.
         """
-
-        res = (("#" * self.width) + "\n") * self.height
+        res = "\n" * self.y
+        res += ((" " * self.x + "#" * self.width) + "\n") * self.height
         print(res, end="")
 
     def __str__(self):
