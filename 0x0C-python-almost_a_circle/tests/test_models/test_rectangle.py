@@ -114,14 +114,18 @@ class TestRectangle(unittest.TestCase):
     
     def test_update(self):
         rectangle = Rectangle(10, 3, 1, 1)
+
         rectangle.update(20)
+        self.assertAlmostEqual(rectangle.id, 20)
+
+        rectangle.update(20, 20)
         self.assertAlmostEqual(rectangle.width, 20)
 
-        # rectangle.update(20, 20)
-        # self.assertAlmostEqual(rectangle.height, 20)
+        rectangle.update(20, 20, 20)
+        self.assertAlmostEqual(rectangle.height, 20)
 
-        # rectangle.update(20, 20, 20)
-        # self.assertAlmostEqual(rectangle.x, 20)
+        rectangle.update(20, 20, 20, 20)
+        self.assertAlmostEqual(rectangle.x, 20)
 
-        # rectangle.update(20, 20, 20, 20)
-        # self.assertAlmostEqual(rectangle.y, 20)
+        rectangle.update(20, 20, 20, 20, 20)
+        self.assertAlmostEqual(rectangle.y, 20)
