@@ -65,29 +65,50 @@ class TestRectangle(unittest.TestCase):
 
     @patch("sys.stdout", new_callable=StringIO)
     def test_display_small(self, mock):
-        rectangle1 =Rectangle(1, 1, 1, 1)
+        rectangle1 =Rectangle(1, 1)
         rectangle1.display()
         excepted_value1 = mock.getvalue()
         self.assertEqual(excepted_value1,"#\n")
 
     @patch("sys.stdout", new_callable=StringIO)
     def test_display_medium(self, mock):
-        rectangle2 =Rectangle(2, 3, 1, 1)
+        rectangle2 =Rectangle(2, 3)
         rectangle2.display()
         excepted_value2 = mock.getvalue()
         self.assertEqual(excepted_value2,"##\n##\n##\n")
 
     @patch("sys.stdout", new_callable=StringIO)
     def test_display_large(self, mock):
-        rectangle2 =Rectangle(10, 3, 1, 1)
+        rectangle2 =Rectangle(10, 3)
         rectangle2.display()
         excepted_value2 = mock.getvalue()
         self.assertEqual(excepted_value2,"##########\n##########\n##########\n")
+
+    @patch("sys.stdout", new_callable=StringIO)
+    def test_display_according_to_x_y_one(self, mock):
+        rectangle3 =Rectangle(10, 3, 1, 1)
+        rectangle3.display()
+        excepted_value2 = mock.getvalue()
+        self.assertEqual(excepted_value2,"\n ##########\n ##########\n ##########\n")
+
+    @patch("sys.stdout", new_callable=StringIO)
+    def test_display_according_to_x_y_two(self, mock):
+        rectangle3 =Rectangle(10, 3, 0, 3)
+        rectangle3.display()
+        excepted_value2 = mock.getvalue()
+        self.assertEqual(excepted_value2,"\n\n\n##########\n##########\n##########\n")
+    
+    @patch("sys.stdout", new_callable=StringIO)
+    def test_display_according_to_x_y_three(self, mock):
+        rectangle3 =Rectangle(10, 3, 3, 0)
+        rectangle3.display()
+        excepted_value2 = mock.getvalue()
+        self.assertEqual(excepted_value2,"   ##########\n   ##########\n   ##########\n")
 
     @patch("sys.stdout", new_callable=StringIO)
     def test_print(self, mock):
         rectangle = Rectangle(10, 3, 1, 1)
         print(rectangle)
         excepted_value = mock.getvalue()
-        self.assertEqual("[Rectangle] (18) 1/1 - 10/3\n", excepted_value)
+        self.assertEqual("[Rectangle] (21) 1/1 - 10/3\n", excepted_value)
 
