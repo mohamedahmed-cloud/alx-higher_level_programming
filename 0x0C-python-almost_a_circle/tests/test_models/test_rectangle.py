@@ -54,4 +54,9 @@ class TestRectangle(unittest.TestCase):
             Rectangle(1, 1, 1, "Yousef").y
     
     def test_area(self):
-        
+        rectangle = Rectangle(2, 4, 1, 1)
+        self.assertAlmostEqual(rectangle.area(), 8)
+        rectangle = Rectangle(1, 1, 1, 1)
+        self.assertAlmostEqual(rectangle.area(), 1)
+        rectangle = Rectangle(10, 20, 1, 1)
+        self.assertAlmostEqual(rectangle.area(), 200)
