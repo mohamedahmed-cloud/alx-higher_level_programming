@@ -135,3 +135,15 @@ class TestRectangle(unittest.TestCase):
 
         rectangle.update(height=20)
         self.assertAlmostEqual(rectangle.height, 20)
+
+        rectangle.update(height=20, width=200)
+        self.assertAlmostEqual(rectangle.width, 200)
+
+        rectangle.update(height=20, width=200, id = 200)
+        self.assertAlmostEqual(rectangle.id, 200)
+
+        rectangle.update(height=20, width=200, id = 200, x = 2)
+        self.assertAlmostEqual(rectangle.x, 2)
+
+        rectangle.update(height=20, width=200, id = 200, x = 2, y = 1)
+        self.assertAlmostEqual(rectangle.y, 1)
