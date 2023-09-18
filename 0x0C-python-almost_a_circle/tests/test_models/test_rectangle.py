@@ -83,3 +83,11 @@ class TestRectangle(unittest.TestCase):
         rectangle2.display()
         excepted_value2 = mock.getvalue()
         self.assertEqual(excepted_value2,"##########\n##########\n##########\n")
+
+    @patch("sys.stdout", new_callable=StringIO)
+    def test_print(self, mock):
+        rectangle = Rectangle(10, 3, 1, 1)
+        print(rectangle)
+        excepted_value = mock.getvalue()
+        self.assertEqual("[Rectangle] (18) 1/1 - 10/3\n", excepted_value)
+
