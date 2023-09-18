@@ -89,19 +89,29 @@ class Rectangle(Base):
         return f"[Rectangle] ({self.id}) {self.x}/\
 {self.y} - {self.width}/{self.height}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         update - this function is used to update the attribute of the object
         """
 
         list = [self.id, self.width, self.height, self.x, self.y]
+        dict = {"id": self.id, "width": self.width,
+                "height": self.height, "x": self.x, "y": self.y}
         cnt = 0
 
-        for i in args:
-            list[cnt] = i
-            cnt += 1
+        if args:
+            for i in args:
+                list[cnt] = i
+                cnt += 1
+        else:
+            for k, v in kwargs.items():
+                dict[k] = v
 
         [id, width, height, x, y] = list
+        if not args:
+            [id, width, height, x, y] = [dict["id"], dict["width"],
+                                         dict["height"], dict["x"], dict["y"]]
+
         self.id = id
         self.width = width
         self.height = height

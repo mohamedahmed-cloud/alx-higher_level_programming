@@ -112,7 +112,7 @@ class TestRectangle(unittest.TestCase):
         excepted_value = mock.getvalue()
         self.assertEqual("[Rectangle] (21) 1/1 - 10/3\n", excepted_value)
     
-    def test_update(self):
+    def test_update_list(self):
         rectangle = Rectangle(10, 3, 1, 1)
 
         rectangle.update(20)
@@ -129,3 +129,9 @@ class TestRectangle(unittest.TestCase):
 
         rectangle.update(20, 20, 20, 20, 20)
         self.assertAlmostEqual(rectangle.y, 20)
+
+    def test_update_dict(self):
+        rectangle = Rectangle(10, 3, 1, 1)
+
+        rectangle.update(height=20)
+        self.assertAlmostEqual(rectangle.height, 20)
