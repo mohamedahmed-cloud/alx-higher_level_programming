@@ -90,6 +90,9 @@ class Rectangle(Base):
 {self.y} - {self.width}/{self.height}"
 
     def update(self, *args):
+        """
+        update - this function is used to update the attribute of the object
+        """
         list = [self.id, self.width, self.height, self.x, self.y]
         cnt = 0
 
