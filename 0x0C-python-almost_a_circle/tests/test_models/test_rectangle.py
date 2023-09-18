@@ -53,3 +53,5 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(1, 1, 1, "Yousef").y
     
+    def test_area(self):
+        
