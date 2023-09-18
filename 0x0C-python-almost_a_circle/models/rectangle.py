@@ -88,3 +88,18 @@ class Rectangle(Base):
     def __str__(self):
         return f"[Rectangle] ({self.id}) {self.x}/\
 {self.y} - {self.width}/{self.height}"
+
+    def update(self, *args):
+        list = [self.id, self.width, self.height, self.x, self.y]
+        cnt = 0
+
+        for i in args:
+            list[cnt] = i
+            cnt += 1
+
+        [id, width, height, x, y] = list
+        self.id = id
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
