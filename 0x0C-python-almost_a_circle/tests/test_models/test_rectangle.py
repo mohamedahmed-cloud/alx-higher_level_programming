@@ -1,4 +1,4 @@
-import unittest
+import unittest, json
 from unittest.mock import patch
 from io import StringIO
 # import rectangle
@@ -147,3 +147,10 @@ class TestRectangle(unittest.TestCase):
 
         rectangle.update(height=20, width=200, id = 200, x = 2, y = 1)
         self.assertAlmostEqual(rectangle.y, 1)
+    
+    def test_to_dictionary(self):
+        rectangle = Rectangle(10, 2, 1, 9, 12)
+        self.assertEqual(json.dumps(rectangle.to_dictionary()), '{"id": 12, "width": 10, "height": 2, "x": 1, "y": 9}')
+        rectangle = Rectangle(12, 12, 12, 12, 12)
+        self.assertEqual(json.dumps(rectangle.to_dictionary()), '{"id": 12, "width": 12, "height": 12, "x": 12, "y": 12}')
+        

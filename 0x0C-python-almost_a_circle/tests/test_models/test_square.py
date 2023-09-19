@@ -109,7 +109,3 @@ class TestSquare(unittest.TestCase):
         s1.update(size=7, id=89, y=1)
         self.assertEqual(str(s1), "[Square] (89) 12/1 - 7")
 
-    def to_dictionary(self):
-        square = Square(1)
-        self.assertEqual(square.to_dictionary(), "")
-        
