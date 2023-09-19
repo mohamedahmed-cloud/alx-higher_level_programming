@@ -17,7 +17,7 @@ class Square(Rectangle):
         __init__ : this is a constructor used to call super class
         """
         self.size = size
-        super().__init__(size, size, x, y, id)
+        super().__init__(self.size, self.size, x, y, id)
 
     @property
     def size(self):
