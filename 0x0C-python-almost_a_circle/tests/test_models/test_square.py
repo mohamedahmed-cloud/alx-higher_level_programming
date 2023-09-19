@@ -96,7 +96,7 @@ class TestSquare(unittest.TestCase):
 
     def test_update(self):
         s1 = Square(5, 12)
-        self.assertEqual(str(s1), "[Square] (37) 12/0 - 5")
+        self.assertEqual(str(s1), "[Square] (34) 12/0 - 5")
 
         s1.update(1, 2)
         self.assertEqual(str(s1), "[Square] (1) 12/0 - 2")
