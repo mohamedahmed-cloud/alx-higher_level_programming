@@ -91,17 +91,38 @@ class TestBase(unittest.TestCase):
     def test_load_from_file(self):
         # file Not found
         # Square 
+        r1 = Square(10, 7, 2, 8)
+        r2 = Square(2, 4)
+        list_rectangles_input = [r1, r2]
+        list_rectangles_output = Square.load_from_file()
+        self.assertEqual([], list_rectangles_output)
 
         # Rectangle
-        # File Exist 
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        list_rectangles_input = [r1, r2]
+        list_rectangles_output = Rectangle.load_from_file()
+        self.assertEqual([], list_rectangles_output)
+
+
+        # File Found
         # Square 
+        r1 = Square(10, 7, 2, 8)
+        r2 = Square(2, 4)
+        list_rectangles_input = [r1, r2]
+
+        Square.save_to_file(list_rectangles_input)
+        list_rectangles_output = Square.load_from_file()
+        self.assertEqual(str(list_rectangles_output[0]), str(list_rectangles_input[0]))
+        self.assertEqual(str(list_rectangles_output[1]), str(list_rectangles_input[1]))
+
         # Rectange
         r1 = Rectangle(10, 7, 2, 8)
         r2 = Rectangle(2, 4)
         list_rectangles_input = [r1, r2]
 
         Rectangle.save_to_file(list_rectangles_input)
-
         list_rectangles_output = Rectangle.load_from_file()
-        self.assertEqual(list_rectangles_output, list_rectangles_input)
+        self.assertEqual(str(list_rectangles_output[0]), str(list_rectangles_input[0]))
+        self.assertEqual(str(list_rectangles_output[1]), str(list_rectangles_input[1]))
 
