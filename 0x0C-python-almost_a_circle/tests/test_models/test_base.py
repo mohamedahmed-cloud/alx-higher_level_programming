@@ -63,4 +63,8 @@ class TestBase(unittest.TestCase):
 
 
     def test_create(self):
-        pass
+        square = Square().create(12)
+        self.assertEqual(square.size, 12)
+        self.assertEqual(square.x, 0)
+        self.assertEqual(square.y, 0)
+        # rectangle = Rectangle()
