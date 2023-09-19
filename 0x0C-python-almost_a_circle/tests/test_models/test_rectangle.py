@@ -153,4 +153,3 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(json.dumps(rectangle.to_dictionary()), '{"id": 12, "width": 10, "height": 2, "x": 1, "y": 9}')
         rectangle = Rectangle(12, 12, 12, 12, 12)
         self.assertEqual(json.dumps(rectangle.to_dictionary()), '{"id": 12, "width": 12, "height": 12, "x": 12, "y": 12}')
-        

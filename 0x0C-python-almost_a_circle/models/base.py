@@ -7,6 +7,9 @@ avoid duplicating the same code (by extension, same bugs)
 """
 
 
+import json
+
+
 class Base:
     """
      base class - will be the base of all class
@@ -20,3 +23,12 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """
+        to_json_string: convert dict to json object.
+        """
+        if list_dictionaries is None or not list_dictionaries:
+            return "[]"
+        return json.dumps(list_dictionaries)
