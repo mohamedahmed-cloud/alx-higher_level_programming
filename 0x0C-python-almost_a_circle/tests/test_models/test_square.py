@@ -67,3 +67,6 @@ class TestSquare(unittest.TestCase):
             square = Square(12, 1, None).y
         with self.assertRaises(TypeError):
             square = Square(123, 1, [1, 2]).y
+    def test_str(self):
+        square = Square(1, 1, 1, 1)
+        self.assertEqual(str(square), "")
