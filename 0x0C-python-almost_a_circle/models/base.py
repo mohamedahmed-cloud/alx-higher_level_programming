@@ -97,7 +97,7 @@ class Base:
                     if file_name == "Rectangle":
                         all.append(Rectangle.create(**dict))
                     else:
-                        all.append(Rectangle.create(**dict))
+                        all.append(Square.create(**dict))
                 return all
 
         except FileExistsError:
