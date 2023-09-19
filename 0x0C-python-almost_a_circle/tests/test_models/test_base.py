@@ -1,6 +1,9 @@
 import unittest, json
 
 from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
+
 class TestBase(unittest.TestCase):
     def test_None(self):
         base = Base()
@@ -44,3 +47,5 @@ class TestBase(unittest.TestCase):
         val1 = {"x": 12, "y": 123}
         val2 = Base.to_json_string(val1)
         self.assertEqual(val2 , json.dumps(val1))
+
+

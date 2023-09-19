@@ -107,10 +107,10 @@ class TestRectangle(unittest.TestCase):
 
     @patch("sys.stdout", new_callable=StringIO)
     def test_print(self, mock):
-        rectangle = Rectangle(10, 3, 1, 1)
+        rectangle = Rectangle(10, 3, 1, 1, 1)
         print(rectangle)
         excepted_value = mock.getvalue()
-        self.assertEqual("[Rectangle] (21) 1/1 - 10/3\n", excepted_value)
+        self.assertEqual("[Rectangle] (1) 1/1 - 10/3\n", excepted_value)
     
     def test_update_list(self):
         rectangle = Rectangle(10, 3, 1, 1)
@@ -153,3 +153,4 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(json.dumps(rectangle.to_dictionary()), '{"id": 12, "width": 10, "height": 2, "x": 1, "y": 9}')
         rectangle = Rectangle(12, 12, 12, 12, 12)
         self.assertEqual(json.dumps(rectangle.to_dictionary()), '{"id": 12, "width": 12, "height": 12, "x": 12, "y": 12}')
+
