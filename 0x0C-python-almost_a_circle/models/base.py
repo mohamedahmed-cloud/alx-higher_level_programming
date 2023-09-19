@@ -76,3 +76,29 @@ class Base:
 
         tmp.update(**dictionary)
         return tmp
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        load_from_file:  that returns a list of instances:
+        """
+
+        from models.rectangle import Rectangle
+        from models.square import Square
+
+        file_name = cls.__name__
+        # Base.create(file_name)
+        try:
+            with open(f"{file_name}.json", "r", encoding='utf-8') as file:
+                res = file.read()
+                res = Base.from_json_string(res)
+                all = []
+                for dict in res:
+                    if file_name == "Rectangle":
+                        all.append(Rectangle.create(**dict))
+                    else:
+                        all.append(Rectangle.create(**dict))
+                return all
+
+        except FileExistsError:
+            return []
