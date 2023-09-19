@@ -11,7 +11,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(square.height, 20)
         self.assertEqual(square.x, 20)
         self.assertEqual(square.y, 20)
-        self.assertEqual(square.id, 24)
+        self.assertEqual(square.id, 1)
         # test value error
         # value error with width and height
         with self.assertRaises(ValueError):
@@ -68,5 +68,12 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(TypeError):
             square = Square(123, 1, [1, 2]).y
     def test_str(self):
-        square = Square(1, 1, 1, 1)
-        self.assertEqual(str(square), "")
+        square = Square(1, 1)
+        self.assertEqual(str(square), "[Square] (24) 1/0 - 1")
+        square = Square(10, 12)
+        self.assertEqual(str(square), "[Square] (25) 12/0 - 10")
+        square = Square(12, 10, 12)
+        self.assertEqual(str(square), "[Square] (26) 10/12 - 12")
+        square = Square(12, 10, 12, 12)
+        self.assertEqual(str(square), "[Square] (12) 10/12 - 12")
+    
