@@ -48,4 +48,15 @@ class TestBase(unittest.TestCase):
         val2 = Base.to_json_string(val1)
         self.assertEqual(val2 , json.dumps(val1))
 
+    def test_from_json_string(self):
+        val1 = {'x':1}
+        val2 = Base.to_json_string(val1)
+        self.assertEqual(Base.from_json_string(val2), val1)
 
+        val1 = None
+        val2 = Base.to_json_string(val1)
+        self.assertEqual(Base.from_json_string(val2), [])
+
+        val1 = []
+        val2 = Base.to_json_string(val1)
+        self.assertEqual(Base.from_json_string(val2), [])
