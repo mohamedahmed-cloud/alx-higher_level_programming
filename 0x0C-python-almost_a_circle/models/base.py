@@ -68,15 +68,12 @@ class Base:
         from models.square import Square
 
         className = cls.__name__
+        tmp = 0
         if className == "Rectangle":
             # width=0, height=0, x=0, y=0, id=None
-            [width, height, x, y, id] = [dictionary.get("width"),
-                                         dictionary.get("height"),
-                                         dictionary.get("x"),
-                                         dictionary.get("y"),
-                                         dictionary.get("id")]
-            return Rectangle(width, height, x, y, id)
+            tmp = Rectangle(2, 2, 2, 2, 2)
         else:
-            [size, x, y, id] = [dictionary.get("size"), dictionary.get("x"),
-                                dictionary.get("y"), dictionary.get("id")]
-            return Square(size, x, y, id)
+            tmp = Rectangle(2, 2, 2, 2)
+
+        tmp.update(**dictionary)
+        return tmp

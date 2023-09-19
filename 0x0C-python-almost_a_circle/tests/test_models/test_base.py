@@ -60,3 +60,7 @@ class TestBase(unittest.TestCase):
         val1 = []
         val2 = Base.to_json_string(val1)
         self.assertEqual(Base.from_json_string(val2), [])
+
+
+    def test_create(self):
+        
