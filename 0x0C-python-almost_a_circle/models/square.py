@@ -37,3 +37,17 @@ class Square(Rectangle):
         """
 
         return super().__str__("Square")
+
+    def update(self, *args, **kwargs):
+        """
+        update - this is a method used to update the object attributes
+        """
+        args = list(args)
+        if len(args) >= 2:
+            args.insert(2, args[1])
+
+        if kwargs.get("size"):
+            kwargs["width"] = kwargs.get("size")
+            kwargs["height"] = kwargs.get("size")
+            del kwargs["size"]
+        super().update(*args, **kwargs)
