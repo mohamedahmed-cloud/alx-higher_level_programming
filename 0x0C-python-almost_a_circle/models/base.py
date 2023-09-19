@@ -70,10 +70,9 @@ class Base:
         className = cls.__name__
         tmp = 0
         if className == "Rectangle":
-            # width=0, height=0, x=0, y=0, id=None
             tmp = Rectangle(2, 2, 2, 2, 2)
         else:
-            tmp = Rectangle(2, 2, 2, 2)
+            tmp = Square(2, 2, 2, 2)
 
         tmp.update(**dictionary)
         return tmp
