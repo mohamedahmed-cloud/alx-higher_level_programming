@@ -39,7 +39,7 @@ class Base:
         save_to_file:  that writes the JSON string
         representation of list_objs to a file:
         """
-        name = list_objs[0].__class__.__name__
+        name = cls.__name__
         file_name = f"{name}.json"
         with open(file_name, "w", encoding='utf-8') as f:
             if list_objs is None:
