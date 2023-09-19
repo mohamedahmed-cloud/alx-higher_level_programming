@@ -76,4 +76,20 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(str(square), "[Square] (26) 10/12 - 12")
         square = Square(12, 10, 12, 12)
         self.assertEqual(str(square), "[Square] (12) 10/12 - 12")
-    
+
+    def test_size(self):
+        square = Square(1, 1, 12, 12)
+        square.size = 24
+        self.assertEqual(square.size, 24)
+        # value error
+        with self.assertRaises(ValueError):
+            square.size = -1
+        # type error
+        with self.assertRaises(TypeError):
+            square.size = "Yousef"
+        with self.assertRaises(TypeError):
+            square.size = True
+        with self.assertRaises(TypeError):
+            square.size = None
+        with self.assertRaises(TypeError):
+            square.size = [1, 2]

@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+#!/usr/bin/python3
 """ 10-main """
 from models.square import Square
 
@@ -14,11 +15,4 @@ if __name__ == "__main__":
         s1.size = "9"
     except Exception as e:
         print("[{}] {}".format(e.__class__.__name__, e))
-    try:
-        s1.size = -1
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-    try:
-        s1.size = 0
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
+
