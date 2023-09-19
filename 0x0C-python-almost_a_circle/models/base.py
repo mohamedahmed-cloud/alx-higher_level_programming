@@ -100,5 +100,5 @@ class Base:
                         all.append(Square.create(**dict))
                 return all
 
-        except FileExistsError:
+        except FileNotFoundError:
             return "[]"

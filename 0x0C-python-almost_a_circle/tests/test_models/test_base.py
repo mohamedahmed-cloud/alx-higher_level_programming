@@ -87,3 +87,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(square.height, 12)
         self.assertEqual(square.x, 12)
         self.assertEqual(square.y, 12)
+
+    def test_load_from_file(self):
+        pass
