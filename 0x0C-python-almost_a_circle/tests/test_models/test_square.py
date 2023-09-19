@@ -111,4 +111,5 @@ class TestSquare(unittest.TestCase):
 
     def to_dictionary(self):
         square = Square(1)
+        self.assertEqual(square.to_dictionary(), "")
         
