@@ -122,9 +122,12 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
-    def to_dictionary(self):
+    def to_dictionary(self, value = "Rectangle"):
         """
         to_dictionary - provide a dictionary representation for the object.
         """
-        return {"id": self.id, "width": self.width,
+        if value == "Rectangle":
+            return {"id": self.id, "width": self.width,
                 "height": self.height, "x": self.x, "y": self.y}
+        else:
+            return {"id": self.id, "size": self.width, "x": self.x, "y": self.y}

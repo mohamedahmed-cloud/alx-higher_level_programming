@@ -52,3 +52,6 @@ class Square(Rectangle):
             del kwargs["size"]
 
         super().update(*args, **kwargs)
+
+    def to_dictionary(self):
+        return super().to_dictionary("Square")

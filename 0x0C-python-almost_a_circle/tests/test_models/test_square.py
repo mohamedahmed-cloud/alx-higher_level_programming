@@ -1,4 +1,4 @@
-import unittest
+import unittest, json
 from unittest.mock import patch
 from io import StringIO
 from models.square import Square
@@ -109,3 +109,8 @@ class TestSquare(unittest.TestCase):
         s1.update(size=7, id=89, y=1)
         self.assertEqual(str(s1), "[Square] (89) 12/1 - 7")
 
+    def test_to_dictionary(self):
+        rectangle = Square(10, 2, 1, 9)
+        self.assertEqual(json.dumps(rectangle.to_dictionary()), '{"id": 9, "size": 10, "x": 2, "y": 1}')
+        rectangle = Square(12, 12, 12, 12)
+        self.assertEqual(json.dumps(rectangle.to_dictionary()), '{"id": 12, "size": 12, "x": 12, "y": 12}')
