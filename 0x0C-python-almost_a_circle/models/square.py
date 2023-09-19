@@ -16,8 +16,20 @@ class Square(Rectangle):
         """
         __init__ : this is a constructor used to call super class
         """
-
+        self.size = size
         super().__init__(size, size, x, y, id)
+
+    @property
+    def size(self):
+        return self.__size
+
+    @size.setter
+    def size(self, size):
+        if type(size) is not int:
+            raise TypeError("width must be an integer")
+        if size <= 0:
+            raise ValueError("width must be a positive integer")
+        self.__size = size
 
     def __str__(self):
         """
