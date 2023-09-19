@@ -54,4 +54,7 @@ class Square(Rectangle):
         super().update(*args, **kwargs)
 
     def to_dictionary(self):
+        """
+        to_dictionary - provide a dictionary representation for the object.
+        """
         return super().to_dictionary("Square")
