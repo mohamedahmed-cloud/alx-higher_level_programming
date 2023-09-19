@@ -9,7 +9,7 @@ if __name__ == "__main__":
     r2 = Rectangle(2, 4)
     list_rectangles_input = [r1, r2]
 
-    # Rectangle.save_to_file(list_rectangles_input)
+    Rectangle.save_to_file(list_rectangles_input)
 
     list_rectangles_output = Rectangle.load_from_file()
     # print(list_rectangles_input)
