@@ -101,4 +101,4 @@ class Base:
                 return all
 
         except FileNotFoundError:
-            return "[]"
+            return []
