@@ -50,4 +50,5 @@ class Square(Rectangle):
             kwargs["width"] = kwargs.get("size")
             kwargs["height"] = kwargs.get("size")
             del kwargs["size"]
+
         super().update(*args, **kwargs)

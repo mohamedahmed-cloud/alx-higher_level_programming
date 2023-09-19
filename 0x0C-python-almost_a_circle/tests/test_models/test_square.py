@@ -93,3 +93,18 @@ class TestSquare(unittest.TestCase):
             square.size = None
         with self.assertRaises(TypeError):
             square.size = [1, 2]
+
+    def test_update(self):
+        s1 = Square(5)
+        self.assertEqual(str(s1), "[Square] (27) 0/0 - 5")
+
+        s1.update(1, 2)
+        self.assertEqual(str(s1), "[Square] (1) 0/0 - 2")
+        
+        s1.update(1, 2, 3)
+        self.assertEqual(str(s1), "[Square] (1) 3/0 - 2")
+
+        s1.update(x=12)
+        
+        s1.update(size=7, id=89, y=1)
+        self.assertEqual(str(s1), "[Square] (89) 12/1 - 7")
