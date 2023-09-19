@@ -63,8 +63,27 @@ class TestBase(unittest.TestCase):
 
 
     def test_create(self):
-        square = Square().create(12)
+        # Test One
+        square = Square.create(**{"size":12})
         self.assertEqual(square.size, 12)
         self.assertEqual(square.x, 0)
         self.assertEqual(square.y, 0)
-        # rectangle = Rectangle()
+        # Test two
+        square = Square.create(**{"size":12, "x": 12, "y": 12})
+        self.assertEqual(square.size, 12)
+        self.assertEqual(square.x, 12)
+        self.assertEqual(square.y, 12)
+
+        # Rectangle
+        # Test one
+        square = Rectangle.create(**{"width":12, "height": 12})
+        self.assertEqual(square.width, 12)
+        self.assertEqual(square.height, 12)
+        self.assertEqual(square.x, 0)
+        self.assertEqual(square.y, 0)
+        # Test two
+        square = Rectangle.create(**{"width":12, "height": 12, "x": 12, "y": 12})
+        self.assertEqual(square.width, 12)
+        self.assertEqual(square.height, 12)
+        self.assertEqual(square.x, 12)
+        self.assertEqual(square.y, 12)
