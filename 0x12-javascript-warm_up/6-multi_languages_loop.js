@@ -1,6 +1,7 @@
+#!/usr/bin/node
 
 const arr = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
-array.forEach(element => {
+arr.forEach(element => {
   console.log(element);
 });
