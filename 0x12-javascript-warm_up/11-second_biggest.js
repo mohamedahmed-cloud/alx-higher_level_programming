@@ -1,17 +1,16 @@
 #!/usr/bin/node
 
 const argv = process.argv;
-const n1 = parseInt(argv[2]);
 
 if (argv.length <= 3) {
   console.log(0);
 } else {
-  let mx = Math.max(...argv);
+  const newArgv = argv.slice(2).map(val => parseInt(val));
+  const mx = Math.max(...newArgv);
   let ans = Number.MIN_SAFE_INTEGER;
 
   for (let i = 2; i < argv.length; i++) {
-	  if (argv[i] !== mx) {
-		console.log(argv[i], "youse");
+    if (parseInt(argv[i]) !== mx) {
       ans = Math.max(argv[i], ans);
     }
   }
