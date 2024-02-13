@@ -11,6 +11,7 @@
 ```
 - changes the authentication method to mysql_native_password
 ```sh
+# Note my password is `password`
 	ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 	# my password for sql server is "password"
 
